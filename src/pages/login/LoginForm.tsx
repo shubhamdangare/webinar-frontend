@@ -82,7 +82,6 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #0e1e25;
-  background-image: url('/assets/topography.svg');
   display: flex;
   justify-content: center;
   align-items: center;

@@ -4,7 +4,6 @@ import { navigate, Link } from "@reach/router";
 import { Form, Icon, Input, Button, Card } from 'antd';
 import { signup, SignResponse, ErrorResponse } from '../../api/auth-api';
 
-
 interface IState {
   error: string
 }
@@ -100,7 +99,6 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #0e1e25;
-  background-image: url('/assets/topography.svg');
   display: flex;
   justify-content: center;
   align-items: center;
