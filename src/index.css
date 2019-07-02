@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Avenir';
+  src: url('/assets/fonts/Avenir.ttc');
+}
+body {
+  margin: 0;
+  font-family: Avenir;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: Avenir;
+}
