@@ -28,7 +28,7 @@ class LoginForm extends React.Component<any, IState> {
           this.setState({ error: (response as ErrorResponse).error })
         } else {
           const { token } = response as LoginResponse
-          navigate('/');
+          navigate('/home');
         }
       }
     });
@@ -42,7 +42,7 @@ class LoginForm extends React.Component<any, IState> {
         <Card title="Login" className="login-card">
           <Form onSubmit={this.handleSubmit} className="login-form">
             <Form.Item>
-              {getFieldDecorator('username', {
+              {getFieldDecorator('userName', {
                 rules: [{ required: true, message: 'Please input your username!' }],
               })(
                 <Input
