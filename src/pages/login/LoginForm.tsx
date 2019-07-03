@@ -22,16 +22,13 @@ class LoginForm extends React.Component<any, IState> {
     e.preventDefault();
     this.props.form.validateFields(async (err: any, values: any) => {
       if (!err) {
-        const { username, password } = values;
-        const response = await login({ username, password })
+        const { userName, password } = values;
+        const response = await login({ userName, password })
         if ((response as ErrorResponse).error) {
           this.setState({ error: (response as ErrorResponse).error })
         } else {
-          const { token, name, email } = response as LoginResponse
-          window.localStorage.setItem('token', token);
-          window.localStorage.setItem('email', email);
-          window.localStorage.setItem('name', name);
-          navigate('/chatboat');
+          const { token } = response as LoginResponse
+          navigate('/');
         }
       }
     });

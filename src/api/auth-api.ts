@@ -1,6 +1,6 @@
 import { AuthPath } from './api-constants'
 import * as request from 'superagent'
-type loginType = { username: string; password: string }
+type loginType = { userName: string; password: string }
 
 type signupType = {
     userName: string;
@@ -10,8 +10,6 @@ type signupType = {
 }
 
 export interface LoginResponse {
-    name: string
-    email: string
     token: string
 }
 
@@ -24,7 +22,7 @@ export interface ErrorResponse {
 }
 
 export const login = async ({
-    username,
+    userName,
     password,
 }: loginType): Promise<LoginResponse | ErrorResponse> => {
 
@@ -32,12 +30,10 @@ export const login = async ({
         const response = await request
             .post(AuthPath.login)
             .set('Content-Type', 'application/json')
-            .send({ username, password });
+            .send({ userName, password });
 
-        const { name, email, token } = response.body
+        const { token } = response.body
         return {
-            name,
-            email,
             token
         } as LoginResponse
     } catch (e) {
